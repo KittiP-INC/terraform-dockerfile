@@ -1,10 +1,5 @@
-FROM node:18
+FROM nginx:stable-otel
 
-WORKDIR /usr/src/app
+WORKDIR /usr/share/nginx/html
 
-COPY package.json ./
-RUN npm install
-
-COPY app.js ./app.js
-
-CMD ["npm", "start"]
+COPY index.html ./index.html
